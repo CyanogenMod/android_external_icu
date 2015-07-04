@@ -2914,6 +2914,34 @@ ucnv_isFixedWidth(UConverter *cnv, UErrorCode *status){
             return FALSE;
     }
 }
+
+U_CAPI UConverter* U_EXPORT2
+ucnv_open_51 (const char *name,
+                       UErrorCode * err) {
+  return ucnv_open(name, err);
+}
+
+U_CAPI void  U_EXPORT2
+ucnv_close_51 (UConverter * converter) {
+  ucnv_close (converter);
+}
+
+U_CAPI int32_t U_EXPORT2
+ucnv_toUChars_51(UConverter *cnv,
+              UChar *dest, int32_t destCapacity,
+              const char *src, int32_t srcLength,
+              UErrorCode *pErrorCode) {
+  return ucnv_toUChars(cnv, dest, destCapacity, src, srcLength, pErrorCode);
+}
+
+U_CAPI int32_t U_EXPORT2
+ucnv_fromUChars_51(UConverter *cnv,
+                char *dest, int32_t destCapacity,
+                const UChar *src, int32_t srcLength,
+                UErrorCode *pErrorCode) {
+  return ucnv_fromUChars(cnv, dest, destCapacity, src, srcLength, pErrorCode);
+}
+
 #endif
 
 /*
